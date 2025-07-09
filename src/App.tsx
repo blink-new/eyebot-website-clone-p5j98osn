@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './components/ui/button';
 import { Card } from './components/ui/card';
-import { Eye, ScanLine, CheckCircle, Loader2, ArrowRight, Zap, Shield, Clock } from 'lucide-react';
+import { Eye, ScanLine, CheckCircle, Loader2, ArrowRight, Zap, Shield, Clock, History } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 function App() {
@@ -18,10 +18,21 @@ function App() {
                 className="h-12 w-auto mr-2"
               />
             </div>
-            <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
-              Find a kiosk
-            </Button>
+            <div className="flex items-center gap-4">
+              <Link to="/prescriptions">
+                <Button 
+                  variant="outline" 
+                  className="border-blue-200 text-blue-800 hover:bg-blue-50 px-6 py-2 rounded-full border-2 font-medium"
+                >
+                  <History className="h-4 w-4 mr-2" />
+                  Prescriptions
+                </Button>
+              </Link>
+              <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
           </div>
         </div>
       </header>
