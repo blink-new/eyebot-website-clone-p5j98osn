@@ -28,10 +28,12 @@ function App() {
                   Prescriptions
                 </Button>
               </Link>
-              <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
-                Get Started
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <Link to="/kiosk-map">
+                <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
+                  Find a kiosk
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -73,13 +75,15 @@ function App() {
                 </Button>
               </Link>
               
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="border-blue-200 text-blue-800 hover:bg-blue-50 px-8 py-4 text-lg rounded-full border-2"
-              >
-                Learn More
-              </Button>
+              <Link to="/learn-more">
+  <Button 
+    variant="outline" 
+    size="lg" 
+    className="border-blue-200 text-blue-800 hover:bg-blue-50 px-8 py-4 text-lg rounded-full border-2"
+  >
+    Learn More
+  </Button>
+</Link>
             </div>
 
             {/* Trust Indicators */}
@@ -271,13 +275,15 @@ function App() {
             Join thousands of satisfied customers who've experienced the future of eye care. 
             Start your 90-second vision test today.
           </p>
-          <Button 
-            size="lg" 
-            className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
-          >
-            Get Started Now
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          <Link to="/kiosk-map">
+            <Button 
+              size="lg" 
+              className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+            >
+              Get Started Now
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
