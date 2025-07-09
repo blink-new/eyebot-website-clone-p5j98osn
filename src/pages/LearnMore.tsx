@@ -81,6 +81,32 @@ export default function LearnMore() {
             </Button>
           </Link>
         </div>
+        <section className="mt-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-3xl p-12 text-center text-white">
+          <img src="/QuickSightTeam.png" alt="QuickSight Staff Team" className="mx-auto mb-8 max-w-full rounded-full shadow-lg" />
+          <h2 className="text-4xl font-bold mb-6">Meet Our Team</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-8 max-w-5xl mx-auto">
+            <div>
+              <h3 className="text-xl font-extrabold uppercase">Clarisse Rivaud</h3>
+              <p className="text-lg">Sales Manager</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-extrabold uppercase">Oumar Cisse</h3>
+              <p className="text-lg">CTO and AI Expert</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-extrabold uppercase">Marine Stettin</h3>
+              <p className="text-lg">CSR Manager</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-extrabold uppercase">Valentin Sagodira</h3>
+              <p className="text-lg">Ophtamologic Expert</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-extrabold uppercase">Julian Vallée</h3>
+              <p className="text-lg">CEO</p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
