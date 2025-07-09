@@ -41,17 +41,16 @@ function App() {
                 size="lg" 
                 className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-800 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
               >
-                Start Your Test
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
+                Find a kiosk
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-blue-200 text-blue-800 hover:bg-blue-50 px-8 py-4 text-lg rounded-full border-2"
-                onClick={() => setCurrentPage('prescription-history')}
               >
-                View My History
+                Learn More
               </Button>
             </div>
 
