@@ -1,16 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from './components/ui/button';
 import { Card } from './components/ui/card';
 import { Eye, ScanLine, CheckCircle, Loader2, ArrowRight, Zap, Shield, Clock } from 'lucide-react';
-import Navigation from './components/Navigation';
-import PrescriptionHistory from './components/PrescriptionHistory';
 import { Link } from 'react-router-dom';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50">
+      {/* Header */}
+      <header className="bg-white/80 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-16">
+            <div className="flex items-center">
+              <img 
+                src="/quicksight_logo.png" 
+                alt="QuickSight Logo" 
+                className="h-12 w-auto mr-2"
+              />
+            </div>
+            <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
+              Find a kiosk
+            </Button>
+          </div>
+        </div>
+      </header>
 
-  const renderHomePage = () => (
-    <>
       {/* Hero Section */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -37,13 +52,15 @@ function App() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-800 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
-                Find a kiosk
-              </Button>
+              <Link to="/kiosk-map">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-blue-800 to-blue-900 hover:from-blue-900 hover:to-blue-800 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c1.104 0 2-.896 2-2s-.896-2-2-2-2 .896-2 2 .896 2 2 2zm0 10c-4.418 0-8-4.03-8-9 0-4.97 3.582-9 8-9s8 4.03 8 9c0 4.97-3.582 9-8 9z" /></svg>
+                  Find a kiosk
+                </Button>
+              </Link>
               
               <Button 
                 variant="outline" 
@@ -243,17 +260,13 @@ function App() {
             Join thousands of satisfied customers who've experienced the future of eye care. 
             Start your 90-second vision test today.
           </p>
-          <div className="flex gap-3">
-            <Link to="/prescriptions">
-              <Button className="bg-gradient-to-r from-blue-600 to-blue-800 text-white px-6 py-2 rounded-full shadow hover:from-blue-700 hover:to-blue-900 transition-all duration-200">
-                My Prescriptions
-              </Button>
-            </Link>
-            <Button className="bg-blue-800 hover:bg-blue-900 text-white px-8 py-2 rounded-full shadow-lg hover:shadow-xl transition-all duration-200">
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            className="bg-white text-blue-900 hover:bg-blue-50 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-200"
+          >
+            Get Started Now
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
         </div>
       </section>
 
@@ -267,7 +280,7 @@ function App() {
                 <img 
                   src="/quicksight_logo.png" 
                   alt="QuickSight Logo" 
-                  className="h-12 w-auto mr-2"
+                  className="h-10 w-auto mr-2 filter brightness-0 invert"
                 />
               </div>
               <p className="text-gray-400 mb-4 max-w-md">
@@ -302,15 +315,7 @@ function App() {
           </div>
         </div>
       </footer>
-    </>
-  );
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-sky-50">
-      <Navigation currentPage={currentPage} onPageChange={setCurrentPage} />
-      
-      {currentPage === 'home' && renderHomePage()}
-      {currentPage === 'prescription-history' && <PrescriptionHistory />}
     </div>
   );
 }
